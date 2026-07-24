@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 162 39% 17%;
+    --card: 0 0% 100%;
+    --card-foreground: 162 39% 17%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 162 39% 17%;
+    --primary: 162 39% 17%;
+    --primary-foreground: 40 33% 98%;
+    --secondary: 40 20% 92%;
+    --secondary-foreground: 162 39% 17%;
+    --muted: 40 14% 93%;
+    --muted-foreground: 162 12% 38%;
+    --accent: 40 43% 56%;
+    --accent-foreground: 0 0% 7%;
+    --destructive: 0 72% 42%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 14% 88%;
+    --input: 40 14% 88%;
+    --ring: 162 39% 17%;
+    --chart-1: 162 39% 17%;
+    --chart-2: 40 43% 56%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.25rem;
+    --font-heading: 'Cormorant Garamond', ui-serif, Georgia, serif;
+    --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Cormorant Garamond', ui-serif, Georgia, serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+    --blade: 162 39% 17%;
+    --linen: 40 33% 98%;
+    --gold: 40 43% 56%;
+    --obsidian: 0 0% 7%;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .text-blade { color: #1A3C34; }
+  .bg-blade { background-color: #1A3C34; }
+  .text-linen { color: #F9F8F4; }
+  .bg-linen { background-color: #F9F8F4; }
+  .text-gold { color: #C5A059; }
+  .bg-gold { background-color: #C5A059; }
+  .text-obsidian { color: #121212; }
+  .bg-obsidian { background-color: #121212; }
+  .border-blade { border-color: #1A3C34; }
+  .border-gold { border-color: #C5A059; }
+  .font-mono-coord { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  .blade-divider {
+    background: linear-gradient(135deg, transparent 48%, #C5A059 48%, #C5A059 52%, transparent 52%);
+  }
+}
