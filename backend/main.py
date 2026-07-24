@@ -19,6 +19,7 @@ from schemas import (
 from auth import verify_password, get_password_hash, create_access_token, get_current_admin
 from email_service import (
     send_email, booking_confirmation_html, booking_status_html,
+    booking_admin_notification_html,
     contact_confirmation_html, contact_admin_notification_html,
 )
 
@@ -57,7 +58,7 @@ def _seed_admin():
         # guessable default.
         return
 
-    admin_email = os.getenv("ADMIN_EMAIL", "admin@avenessllc.com")
+    admin_email = os.getenv("ADMIN_EMAIL", "admin@jasparkle.com")
     db = SessionLocal()
     try:
         existing = db.query(Admin).first()
@@ -102,12 +103,28 @@ def create_booking(data: BookingCreate, db: Session = Depends(get_db)):
 
     send_email(
         to_email=data.email,
-        subject=f"Your Aveness Service Request {reference}",
+        subject=f"Your JA Sparkle Service Request {reference}",
         html_body=booking_confirmation_html(
             name=data.name,
             reference=reference,
             address=data.address,
             frequency=data.frequency,
+            preferred_date=data.preferred_date,
+            preferred_time=data.preferred_time,
+        ),
+    )
+
+    admin_email = os.getenv("ADMIN_EMAIL", "admin@jasparkle.com")
+    send_email(
+        to_email=admin_email,
+        subject=f"New Service Request: {reference}",
+        html_body=booking_admin_notification_html(
+            name=data.name,
+            email=data.email,
+            phone=data.phone,
+            address=data.address,
+            frequency=data.frequency,
+            reference=reference,
             preferred_date=data.preferred_date,
             preferred_time=data.preferred_time,
         ),
@@ -131,7 +148,7 @@ def create_contact(data: ContactCreate, db: Session = Depends(get_db)):
 
     send_email(
         to_email=data.email,
-        subject="Thank you for contacting Aveness",
+        subject="Thank you for contacting JA Sparkle",
         html_body=contact_confirmation_html(
             name=data.name,
             subject=data.subject,
@@ -139,7 +156,7 @@ def create_contact(data: ContactCreate, db: Session = Depends(get_db)):
         ),
     )
 
-    admin_email = os.getenv("ADMIN_EMAIL", "admin@avenessllc.com")
+    admin_email = os.getenv("ADMIN_EMAIL", "admin@jasparkle.com")
     send_email(
         to_email=admin_email,
         subject=f"New Contact: {data.subject or 'No subject'}",
@@ -199,7 +216,7 @@ def update_booking_status(
 
     send_email(
         to_email=booking.email,
-        subject=f"Aveness Service Update — {booking.reference}",
+        subject=f"JA Sparkle Service Update \u2014 {booking.reference}",
         html_body=booking_status_html(
             name=booking.name,
             reference=booking.reference,
