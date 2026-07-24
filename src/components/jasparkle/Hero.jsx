@@ -43,13 +43,13 @@ export default function Hero() {
           </p>
           <div className="flex flex-wrap gap-3 mt-8">
             <a
-              href="#js-quote"
+              href="js-quote"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-jas-lime text-jas-ink font-semibold hover:brightness-95 transition shadow-sm"
             >
               Get a Free Quote <ArrowRight size={18} />
             </a>
             <a
-              href="#js-work"
+              href="js-work"
               className="inline-flex items-center px-6 py-3.5 rounded-full bg-white border border-jas-ink/15 text-jas-ink font-semibold hover:border-jas-moss hover:text-jas-moss transition"
             >
               See Our Work

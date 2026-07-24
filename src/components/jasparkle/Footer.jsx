@@ -46,7 +46,7 @@ export default function Footer() {
               Ready to start?
             </p>
             <a
-              href="#js-quote"
+              href="js-quote"
               className="inline-flex items-center px-6 py-3 rounded-full bg-jas-lime text-jas-ink font-bold text-sm hover:brightness-95 transition"
             >
               Get a Free Quote

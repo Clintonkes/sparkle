@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Menu, X, Sparkles } from "lucide-react";
 
 const LINKS = [
-  { label: "Services", href: "#js-services" },
-  { label: "Why Us", href: "#js-why" },
-  { label: "Work", href: "#js-work" },
-  { label: "Quote", href: "#js-quote" },
-  { label: "Contact", href: "#js-contact" },
+  { label: "Services", href: "js-services" },
+  { label: "Why Us", href: "js-why" },
+  { label: "Work", href: "js-work" },
+  { label: "Quote", href: "js-quote" },
+  { label: "Contact", href: "js-contact" },
 ];
 
 export default function Navbar() {
@@ -28,7 +28,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-[1240px] mx-auto px-6 lg:px-8 flex items-center justify-between h-20">
-        <a href="#js-top" className="flex items-center gap-2">
+        <a href="js-top" className="flex items-center gap-2">
           <span className="grid place-items-center w-9 h-9 rounded-full bg-jas-lime">
             <Sparkles size={18} className="text-jas-ink" />
           </span>
@@ -48,7 +48,7 @@ export default function Navbar() {
           ))}
         </nav>
         <a
-          href="#js-quote"
+          href="js-quote"
           className="hidden md:inline-flex items-center px-5 py-2.5 rounded-full bg-jas-ink text-jas-lime text-sm font-semibold hover:bg-jas-moss transition"
         >
           Free Quote
@@ -75,7 +75,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#js-quote"
+              href="js-quote"
               onClick={() => setOpen(false)}
               className="mt-3 inline-flex justify-center px-5 py-3 rounded-full bg-jas-lime text-jas-ink font-semibold"
             >

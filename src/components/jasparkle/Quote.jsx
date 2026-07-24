@@ -110,6 +110,25 @@ export default function Quote() {
                   We'll reach out within one business day to schedule your free
                   estimate.
                 </p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setDone(false);
+                    setForm({
+                      name: "",
+                      phone: "",
+                      email: "",
+                      address: "",
+                      service: OPTIONS[0],
+                      preferred_date: "",
+                      preferred_time: "morning",
+                      notes: "",
+                    });
+                  }}
+                  className="mt-8 px-6 py-3 rounded-full border-2 border-jas-ink/15 text-jas-ink font-semibold hover:border-jas-moss hover:text-jas-moss transition"
+                >
+                  Submit Another Request
+                </button>
               </div>
             ) : (
               <form onSubmit={submit} className="grid sm:grid-cols-2 gap-5">

@@ -1,11 +1,11 @@
 {
-  "name": "Aveness LLC Estate Lawncare",
-  "short_name": "Aveness",
-  "description": "Professional lawncare and mowing for Naples, FL estates.",
+  "name": "JA Sparkle LLC Lawn Care",
+  "short_name": "JA Sparkle",
+  "description": "Honest, dependable lawn care for Rocky Mount and the Coastal Plains of North Carolina.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f5f1e8",
-  "theme_color": "#1a2e22",
+  "background_color": "#F7F5ED",
+  "theme_color": "#1A2E1A",
   "icons": [
     {
       "src": "/favicon.svg",
