@@ -98,7 +98,7 @@ def booking_confirmation_html(name: str, reference: str, address: str, frequency
 
 
 def booking_admin_notification_html(name: str, email: str, phone: str, address: str, frequency: str, reference: str, preferred_date=None, preferred_time: str = None) -> str:
-    date_display = preferred_date.strftime("%B %-d, %Y") if preferred_date if preferred_date else "Not specified"
+    date_display = preferred_date.strftime("%B %-d, %Y") if preferred_date else "Not specified"
     time_display = TIME_WINDOW_LABELS.get(preferred_time, preferred_time or "Not specified")
     return f"""
     <!DOCTYPE html>
