@@ -1,4 +1,5 @@
 import React from "react";
+import { handleSectionLinkClick } from "@/lib/scrollToSection";
 
 const PROJECTS = [
   {
@@ -53,7 +54,8 @@ export default function Work() {
             </h2>
           </div>
           <a
-            href="js-quote"
+            href="#js-quote"
+            onClick={handleSectionLinkClick("js-quote")}
             className="inline-flex items-center gap-2 text-jas-ink font-semibold border-b-2 border-jas-lime pb-1 hover:text-jas-moss transition w-fit"
           >
             Start yours →

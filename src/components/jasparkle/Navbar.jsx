@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, Sparkles } from "lucide-react";
+import { handleSectionLinkClick } from "@/lib/scrollToSection";
 
 const LINKS = [
-  { label: "Services", href: "js-services" },
-  { label: "Why Us", href: "js-why" },
-  { label: "Work", href: "js-work" },
-  { label: "Quote", href: "js-quote" },
-  { label: "Contact", href: "js-contact" },
+  { label: "Services", id: "js-services" },
+  { label: "Why Us", id: "js-why" },
+  { label: "Work", id: "js-work" },
+  { label: "Quote", id: "js-quote" },
+  { label: "Contact", id: "js-contact" },
 ];
 
 export default function Navbar() {
@@ -28,7 +29,7 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-[1240px] mx-auto px-6 lg:px-8 flex items-center justify-between h-20">
-        <a href="js-top" className="flex items-center gap-2">
+        <a href="#js-top" onClick={handleSectionLinkClick("js-top")} className="flex items-center gap-2">
           <span className="grid place-items-center w-9 h-9 rounded-full bg-jas-lime">
             <Sparkles size={18} className="text-jas-ink" />
           </span>
@@ -39,8 +40,9 @@ export default function Navbar() {
         <nav className="hidden md:flex items-center gap-1 p-1 rounded-full border border-jas-ink/10 bg-white/60">
           {LINKS.map((l) => (
             <a
-              key={l.href}
-              href={l.href}
+              key={l.id}
+              href={`#${l.id}`}
+              onClick={handleSectionLinkClick(l.id)}
               className="px-4 py-2 text-sm font-medium text-jas-ink/70 hover:text-jas-moss hover:bg-white rounded-full transition"
             >
               {l.label}
@@ -48,7 +50,8 @@ export default function Navbar() {
           ))}
         </nav>
         <a
-          href="js-quote"
+          href="#js-quote"
+          onClick={handleSectionLinkClick("js-quote")}
           className="hidden md:inline-flex items-center px-5 py-2.5 rounded-full bg-jas-ink text-jas-lime text-sm font-semibold hover:bg-jas-moss transition"
         >
           Free Quote
@@ -66,17 +69,23 @@ export default function Navbar() {
           <nav className="flex flex-col gap-1">
             {LINKS.map((l) => (
               <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
+                key={l.id}
+                href={`#${l.id}`}
+                onClick={(e) => {
+                  handleSectionLinkClick(l.id)(e);
+                  setOpen(false);
+                }}
                 className="text-jas-ink/80 text-base font-medium py-2.5 border-b border-jas-ink/5"
               >
                 {l.label}
               </a>
             ))}
             <a
-              href="js-quote"
-              onClick={() => setOpen(false)}
+              href="#js-quote"
+              onClick={(e) => {
+                handleSectionLinkClick("js-quote")(e);
+                setOpen(false);
+              }}
               className="mt-3 inline-flex justify-center px-5 py-3 rounded-full bg-jas-lime text-jas-ink font-semibold"
             >
               Free Quote
