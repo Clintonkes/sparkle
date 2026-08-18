@@ -19,7 +19,8 @@ export default function Footer() {
     setSubmitting(true);
     setError(null);
     try {
-      const res = await fetch("/api/contacts", {
+      const API_URL = import.meta.env.VITE_API_URL || "";
+      const res = await fetch(`${API_URL}/api/contacts`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

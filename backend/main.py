@@ -29,6 +29,8 @@ origins = [
     "http://localhost:5173",
     "http://localhost:3000",
     "http://127.0.0.1:5173",
+    "https://jasparkle.com",
+    "https://www.jasparkle.com",
 ]
 render_url = os.getenv("RENDER_EXTERNAL_URL")
 if render_url:
