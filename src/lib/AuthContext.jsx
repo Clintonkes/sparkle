@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
   const [admin, setAdmin] = useState(null);
   const [token, setToken] = useState(() => localStorage.getItem('aveness_admin_token'));
   // Trust a stored token immediately so a page refresh never drops the
-  // admin back to the login screen while we're re-verifying in the
+  // admin back to the login screen while we're reverifying in the
   // background. Only an explicit 401 from the server clears it.
   const [isAuthenticated, setIsAuthenticated] = useState(() => !!localStorage.getItem('aveness_admin_token'));
   const [isLoading, setIsLoading] = useState(false);
@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
         logout();
       }
       // Any other outcome (200, a transient 5xx, or a network error) is
-      // left alone — the stored token stays valid until the server
+      // left alone: the stored token stays valid until the server
       // explicitly rejects it.
     } catch {
       // Network blip: don't sign the admin out over it.

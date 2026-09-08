@@ -29,14 +29,14 @@ const STATUS_OPTIONS = [
 
 const FREQUENCY_LABELS = {
   weekly: "Weekly",
-  biweekly: "Bi-weekly",
+  biweekly: "Biweekly",
   seasonal: "Seasonal",
 };
 
 const TIME_WINDOW_LABELS = {
-  morning: "Morning (8am–12pm)",
-  afternoon: "Afternoon (12pm–4pm)",
-  evening: "Evening (4pm–7pm)",
+  morning: "Morning (8am to 12pm)",
+  afternoon: "Afternoon (12pm to 4pm)",
+  evening: "Evening (4pm to 7pm)",
 };
 
 const formatDate = (iso) =>
@@ -177,7 +177,7 @@ export default function AdminDashboard() {
           </div>
         )}
 
-        {/* Tabs — desktop */}
+        {/* Tabs: desktop */}
         <div className="hidden sm:flex gap-1 border-b border-linen/10 mb-6">
           {["bookings", "contacts"].map((t) => (
             <button
@@ -194,7 +194,7 @@ export default function AdminDashboard() {
           ))}
         </div>
 
-        {/* Tabs — mobile hamburger */}
+        {/* Tabs: mobile hamburger */}
         <div className="sm:hidden flex items-center gap-3 border-b border-linen/10 mb-6 pb-4">
           <DropdownMenu>
             <DropdownMenuTrigger
@@ -459,7 +459,7 @@ function ContactsTable({ contacts, onView }) {
               <tr key={c.id} className="border-b border-linen/5 hover:bg-linen/5 transition-colors">
                 <td className="py-4 px-4 text-linen text-sm">{c.name}</td>
                 <td className="py-4 px-4 text-linen/70 text-sm">{c.email}</td>
-                <td className="py-4 px-4 text-linen/70 text-sm max-w-[160px] truncate">{c.subject || "—"}</td>
+                <td className="py-4 px-4 text-linen/70 text-sm max-w-[160px] truncate">{c.subject || "N/A"}</td>
                 <td className="py-4 px-4 text-linen/70 text-sm max-w-[240px] truncate">{c.message}</td>
                 <td className="py-4 px-4 text-linen/50 text-xs font-mono-coord whitespace-nowrap">
                   {formatDateTime(c.created_at)}
@@ -539,7 +539,7 @@ function BookingDetailDialog({ booking, onOpenChange }) {
                 value={booking.status.charAt(0).toUpperCase() + booking.status.slice(1)}
               />
               <DetailRow label="EMAIL" value={booking.email} />
-              <DetailRow label="PHONE" value={booking.phone || "—"} />
+              <DetailRow label="PHONE" value={booking.phone || "N/A"} />
               <div className="col-span-2">
                 <DetailRow label="PROPERTY ADDRESS" value={booking.address} />
               </div>
@@ -549,11 +549,11 @@ function BookingDetailDialog({ booking, onOpenChange }) {
               />
               <DetailRow
                 label="PREFERRED START DATE"
-                value={booking.preferred_date ? formatDate(booking.preferred_date) : "—"}
+                value={booking.preferred_date ? formatDate(booking.preferred_date) : "N/A"}
               />
               <DetailRow
                 label="PREFERRED TIME"
-                value={TIME_WINDOW_LABELS[booking.preferred_time] || booking.preferred_time || "—"}
+                value={TIME_WINDOW_LABELS[booking.preferred_time] || booking.preferred_time || "N/A"}
               />
               <DetailRow label="SUBMITTED" value={formatDateTime(booking.created_at)} />
               <DetailRow label="LAST UPDATED" value={formatDateTime(booking.updated_at)} />
@@ -580,8 +580,8 @@ function ContactDetailDialog({ contact, onOpenChange }) {
             <div className="grid grid-cols-2 gap-5 py-2">
               <DetailRow label="NAME" value={contact.name} />
               <DetailRow label="EMAIL" value={contact.email} />
-              <DetailRow label="PHONE" value={contact.phone || "—"} />
-              <DetailRow label="SUBJECT" value={contact.subject || "—"} />
+              <DetailRow label="PHONE" value={contact.phone || "N/A"} />
+              <DetailRow label="SUBJECT" value={contact.subject || "N/A"} />
               <div className="col-span-2">
                 <DetailRow label="MESSAGE" value={contact.message} />
               </div>

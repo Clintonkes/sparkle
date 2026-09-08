@@ -38,9 +38,9 @@ def send_email(to_email: str, subject: str, html_body: str) -> bool:
 
 
 TIME_WINDOW_LABELS = {
-    "morning": "Morning (8am\u201312pm)",
-    "afternoon": "Afternoon (12pm\u20134pm)",
-    "evening": "Evening (4pm\u20137pm)",
+    "morning": "Morning (8am to 12pm)",
+    "afternoon": "Afternoon (12pm to 4pm)",
+    "evening": "Evening (4pm to 7pm)",
 }
 
 

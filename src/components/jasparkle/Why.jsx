@@ -3,9 +3,9 @@ import { Check } from "lucide-react";
 
 const POINTS = [
   "Locally owned and operated in Rocky Mount, NC",
-  "Reliable weekly and bi-weekly schedules",
-  "Licensed, insured, background-checked crew",
-  "Upfront pricing — no surprise fees",
+  "Reliable weekly and biweekly schedules",
+  "Licensed, insured, background checked crew",
+  "Upfront pricing, no surprise fees",
   "Carolina expertise: heat, humidity, sandy loam",
   "Satisfaction guaranteed on every visit",
 ];
@@ -50,9 +50,9 @@ export default function Why() {
             Dependable care, week after week.
           </h2>
           <p className="text-jas-ink/65 text-lg mt-5 leading-relaxed">
-            We're not the biggest — we're the most dependable. Every lawn gets
-            the same careful attention, whether it's a quarter-acre lot or a
-            five-acre estate.
+            We're not the biggest, we're the most dependable. Every lawn gets
+            the same careful attention, whether it's a quarter acre lot or a
+            five acre estate.
           </p>
           <ul className="grid sm:grid-cols-2 gap-3 mt-8">
             {POINTS.map((p) => (

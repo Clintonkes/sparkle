@@ -5,7 +5,7 @@ const SERVICES = [
   {
     icon: Sparkles,
     t: "Lawn Mowing",
-    d: "Even, clean cuts on a dependable schedule — edges defined and clippings cleared every visit.",
+    d: "Even, clean cuts on a dependable schedule: edges defined and clippings cleared every visit.",
     img: "https://media.base44.com/images/public/6a5d5a3dd2e5eb4ee0df1b96/0643672ee_generated_66730131.png",
   },
   {
@@ -17,13 +17,13 @@ const SERVICES = [
   {
     icon: Droplets,
     t: "Fertilization & Weed Control",
-    d: "Carolina-tuned feeding programs that keep grass green through the heat and choke out weeds.",
+    d: "Carolina tuned feeding programs that keep grass green through the heat and choke out weeds.",
     img: "https://media.base44.com/images/public/6a5d5a3dd2e5eb4ee0df1b96/858347446_generated_f5cc6c49.png",
   },
   {
     icon: Leaf,
-    t: "Seasonal Clean-Up",
-    d: "Spring and fall clean-ups, leaf removal, and bed maintenance to keep your yard sharp year-round.",
+    t: "Seasonal Cleanup",
+    d: "Spring and fall cleanups, leaf removal, and bed maintenance to keep your yard sharp year round.",
     img: "https://media.base44.com/images/public/6a5d5a3dd2e5eb4ee0df1b96/493477298_generated_772bfbd1.png",
   },
 ];
@@ -44,7 +44,7 @@ export default function Services() {
             </h2>
           </div>
           <p className="text-jas-ink/60 max-w-sm">
-            Every visit, the same standard — sharp lines, healthy turf, and a
+            Every visit, the same standard: sharp lines, healthy turf, and a
             yard you're proud to come home to.
           </p>
         </div>

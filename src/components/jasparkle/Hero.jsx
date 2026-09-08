@@ -39,7 +39,7 @@ export default function Hero() {
             . Yards that turn heads.
           </h1>
           <p className="text-jas-ink/70 text-lg mt-6 max-w-md leading-relaxed">
-            JA Sparkle LLC brings sharp mowing, clean edges, and year-round
+            JA Sparkle LLC brings sharp mowing, clean edges, and year round
             care to homes and businesses across Rocky Mount and Nash County.
           </p>
           <div className="flex flex-wrap gap-3 mt-8">

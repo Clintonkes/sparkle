@@ -218,7 +218,7 @@ def update_booking_status(
 
     send_email(
         to_email=booking.email,
-        subject=f"JA Sparkle Service Update \u2014 {booking.reference}",
+        subject=f"JA Sparkle Service Update: {booking.reference}",
         html_body=booking_status_html(
             name=booking.name,
             reference=booking.reference,

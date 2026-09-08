@@ -3,17 +3,17 @@ import { Check, Phone, Mail, MapPin, Loader2 } from "lucide-react";
 
 const OPTIONS = [
   "Weekly Mowing",
-  "Bi-Weekly Mowing",
-  "One-Time Cut",
+  "Biweekly Mowing",
+  "One Time Cut",
   "Edging & Trimming",
   "Fertilization & Weed Control",
-  "Seasonal Clean-Up",
+  "Seasonal Cleanup",
 ];
 
 const TIME_SLOTS = [
-  { value: "morning", label: "Morning (8am - 12pm)" },
-  { value: "afternoon", label: "Afternoon (12pm - 5pm)" },
-  { value: "evening", label: "Evening (5pm - 8pm)" },
+  { value: "morning", label: "Morning (8am to 12pm)" },
+  { value: "afternoon", label: "Afternoon (12pm to 5pm)" },
+  { value: "evening", label: "Evening (5pm to 8pm)" },
 ];
 
 export default function Quote() {
@@ -76,7 +76,7 @@ export default function Quote() {
               Get your price in 24 hours.
             </h2>
             <p className="text-jas-lime/70 mt-4 leading-relaxed">
-              Tell us about your property — we'll come take a look and send a
+              Tell us about your property. We'll come take a look and send a
               straightforward quote.
             </p>
             <div className="mt-10 space-y-4 text-white/80">

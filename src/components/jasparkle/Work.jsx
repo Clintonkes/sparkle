@@ -17,19 +17,19 @@ const PROJECTS = [
   {
     name: "Nash County Home",
     area: "Nash County",
-    tag: "Bi-Weekly",
+    tag: "Biweekly",
     img: "https://media.base44.com/images/public/6a5d5a3dd2e5eb4ee0df1b96/9ee7327f1_generated_5fdb9850.png",
   },
   {
     name: "Tarboro Estate",
     area: "Tarboro",
-    tag: "Full-Season Program",
+    tag: "Full Season Program",
     img: "https://media.base44.com/images/public/6a5d5a3dd2e5eb4ee0df1b96/0643672ee_generated_66730131.png",
   },
   {
     name: "Wilson Residence",
     area: "Wilson",
-    tag: "Clean-Up + Mowing",
+    tag: "Cleanup + Mowing",
     img: "https://media.base44.com/images/public/6a5d5a3dd2e5eb4ee0df1b96/858347446_generated_f5cc6c49.png",
   },
   {
