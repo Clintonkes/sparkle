@@ -29,8 +29,8 @@ origins = [
     "http://localhost:5173",
     "http://localhost:3000",
     "http://127.0.0.1:5173",
-    "https://jasparkle.com",
-    "https://www.jasparkle.com",
+    "https://jasparkle.org",
+    "https://www.jasparkle.org",
 ]
 render_url = os.getenv("RENDER_EXTERNAL_URL")
 if render_url:
@@ -60,7 +60,7 @@ def _seed_admin():
         # guessable default.
         return
 
-    admin_email = os.getenv("ADMIN_EMAIL", "admin@jasparkle.com")
+    admin_email = os.getenv("ADMIN_EMAIL", "admin@jasparkle.org")
     db = SessionLocal()
     try:
         existing = db.query(Admin).first()
@@ -116,7 +116,7 @@ def create_booking(data: BookingCreate, db: Session = Depends(get_db)):
         ),
     )
 
-    admin_email = os.getenv("ADMIN_EMAIL", "admin@jasparkle.com")
+    admin_email = os.getenv("ADMIN_EMAIL", "admin@jasparkle.org")
     send_email(
         to_email=admin_email,
         subject=f"New Service Request: {reference}",
@@ -158,7 +158,7 @@ def create_contact(data: ContactCreate, db: Session = Depends(get_db)):
         ),
     )
 
-    admin_email = os.getenv("ADMIN_EMAIL", "admin@jasparkle.com")
+    admin_email = os.getenv("ADMIN_EMAIL", "admin@jasparkle.org")
     send_email(
         to_email=admin_email,
         subject=f"New Contact: {data.subject or 'No subject'}",
